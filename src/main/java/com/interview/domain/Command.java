@@ -5,13 +5,13 @@ import lombok.AllArgsConstructor;
 import static java.util.Arrays.stream;
 
 @AllArgsConstructor
-public enum MoveDirection {
-    MOVE_FORWARD('F'), MOVE_BACKWARD('B');
+public enum Command {
+    MOVE_FORWARD('F'), MOVE_BACKWARD('B'), ROTATE_LEFT('L'), ROTATE_RIGHT('R');
 
     private final char symbol;
 
-    public static MoveDirection getBySymbol(char symbol) {
-        return stream(MoveDirection.values())
+    public static Command getBySymbol(char symbol) {
+        return stream(Command.values())
                 .filter(value -> value.symbol == symbol)
                 .findAny()
                 .orElseThrow();

@@ -6,5 +6,5 @@ import lombok.Value;
 public class Location {
     int x;
     int y;
-    WorldDirection worldDirection;
+    Direction direction;
 }
