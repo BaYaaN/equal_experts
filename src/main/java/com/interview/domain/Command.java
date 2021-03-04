@@ -14,6 +14,6 @@ public enum Command {
         return stream(Command.values())
                 .filter(value -> value.symbol == symbol)
                 .findAny()
-                .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException("Not supported command for symbol: " + symbol));
     }
 }
