@@ -40,12 +40,12 @@ class CommandProcessorTest {
         String command = "";
 
         //when
-        Location process = commandProcessor.process(startingPoint, command);
+        Location result = commandProcessor.process(startingPoint, command);
 
         //then
-        assertThat(process.getX()).isEqualTo(4);
-        assertThat(process.getY()).isEqualTo(2);
-        assertThat(process.getDirection()).isEqualTo(Direction.EAST);
+        assertThat(result.getX()).isEqualTo(4);
+        assertThat(result.getY()).isEqualTo(2);
+        assertThat(result.getDirection()).isEqualTo(Direction.EAST);
     }
 
     @Test
@@ -55,11 +55,11 @@ class CommandProcessorTest {
         String command = "FLFFFRFLB";
 
         //when
-        Location process = commandProcessor.process(startingPoint, command);
+        Location result = commandProcessor.process(startingPoint, command);
 
         //then
-        assertThat(process.getX()).isEqualTo(6);
-        assertThat(process.getY()).isEqualTo(4);
-        assertThat(process.getDirection()).isEqualTo(Direction.NORTH);
+        assertThat(result.getX()).isEqualTo(6);
+        assertThat(result.getY()).isEqualTo(4);
+        assertThat(result.getDirection()).isEqualTo(Direction.NORTH);
     }
 }
