@@ -6,20 +6,26 @@ import lombok.AllArgsConstructor;
 import lombok.NonNull;
 
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static java.util.stream.Collectors.toUnmodifiableList;
 
 @AllArgsConstructor
 public class CommandProcessor {
 
+    private static final Logger LOGGER = Logger.getLogger(CommandProcessor.class.getName());
+
     private final ActionFactory actionFactory;
 
-    public Location process(@NonNull Location startingPoint, @NonNull String commandAsString) {
+    public Location process(@NonNull Location initialLocation, @NonNull String commandAsString) {
+        LOGGER.log(Level.INFO, "Start processing command {0}", commandAsString);
+
         if (commandAsString.length() <= 0) {
-            return startingPoint;
+            return initialLocation;
         }
 
-        Location currentLocation = startingPoint;
+        Location currentLocation = initialLocation;
 
         for (Command command : mapCommandToList(commandAsString)) {
             Action action = actionFactory.getActionByCommand(command);
