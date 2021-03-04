@@ -7,7 +7,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static com.interview.domain.Command.*;
-import static com.interview.domain.Direction.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class DirectionTest {
@@ -24,16 +23,16 @@ class DirectionTest {
 
     private static Stream<Arguments> parametrized() {
         return Stream.of(
-                Arguments.arguments(NORTH, ROTATE_RIGHT, EAST),
-                Arguments.arguments(EAST, ROTATE_RIGHT, SOUTH),
-                Arguments.arguments(SOUTH, ROTATE_RIGHT, WEST),
-                Arguments.arguments(WEST, ROTATE_RIGHT, NORTH),
-                Arguments.arguments(NORTH, ROTATE_LEFT, WEST),
-                Arguments.arguments(WEST, ROTATE_LEFT, SOUTH),
-                Arguments.arguments(SOUTH, ROTATE_LEFT, EAST),
-                Arguments.arguments(EAST, ROTATE_LEFT, NORTH),
-                Arguments.arguments(EAST, MOVE_BACKWARD, EAST),
-                Arguments.arguments(EAST, MOVE_FORWARD, EAST)
+                Arguments.arguments(Direction.NORTH, ROTATE_RIGHT, Direction.EAST),
+                Arguments.arguments(Direction.EAST, ROTATE_RIGHT, Direction.SOUTH),
+                Arguments.arguments(Direction.SOUTH, ROTATE_RIGHT, Direction.WEST),
+                Arguments.arguments(Direction.WEST, ROTATE_RIGHT, Direction.NORTH),
+                Arguments.arguments(Direction.NORTH, ROTATE_LEFT, Direction.WEST),
+                Arguments.arguments(Direction.WEST, ROTATE_LEFT, Direction.SOUTH),
+                Arguments.arguments(Direction.SOUTH, ROTATE_LEFT, Direction.EAST),
+                Arguments.arguments(Direction.EAST, ROTATE_LEFT, Direction.NORTH),
+                Arguments.arguments(Direction.EAST, MOVE_BACKWARD, Direction.EAST),
+                Arguments.arguments(Direction.EAST, MOVE_FORWARD, Direction.EAST)
         );
     }
 }

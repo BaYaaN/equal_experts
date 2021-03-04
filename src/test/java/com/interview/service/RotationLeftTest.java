@@ -1,14 +1,13 @@
-package com.interview.domain;
+package com.interview.service;
 
-import com.interview.service.Action;
-import com.interview.service.RotateLeft;
+import com.interview.domain.Direction;
+import com.interview.domain.Location;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static com.interview.domain.Direction.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class RotationLeftTest {
@@ -27,10 +26,10 @@ class RotationLeftTest {
 
     private static Stream<Arguments> parametrized() {
         return Stream.of(
-                Arguments.arguments(new Location(5, 10, NORTH), new Location(5, 10, WEST)),
-                Arguments.arguments(new Location(5, -10, EAST), new Location(5, -10, NORTH)),
-                Arguments.arguments(new Location(0, 0, SOUTH), new Location(0, 0, EAST)),
-                Arguments.arguments(new Location(0, 0, WEST), new Location(0, 0, SOUTH))
+                Arguments.arguments(new Location(5, 10, Direction.NORTH), new Location(5, 10, Direction.WEST)),
+                Arguments.arguments(new Location(5, -10, Direction.EAST), new Location(5, -10, Direction.NORTH)),
+                Arguments.arguments(new Location(0, 0, Direction.SOUTH), new Location(0, 0, Direction.EAST)),
+                Arguments.arguments(new Location(0, 0, Direction.WEST), new Location(0, 0, Direction.SOUTH))
 
         );
     }

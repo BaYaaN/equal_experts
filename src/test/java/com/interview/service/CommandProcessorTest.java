@@ -1,7 +1,7 @@
-package com.interview.domain;
+package com.interview.service;
 
-import com.interview.service.ActionFactory;
-import com.interview.service.CommandProcessor;
+import com.interview.domain.Direction;
+import com.interview.domain.Location;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
