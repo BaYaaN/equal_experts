@@ -11,13 +11,13 @@ import java.util.stream.Stream;
 import static com.interview.domain.Direction.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class RotationLeftTest {
+class RotationLeftTest {
 
     private final Action action = new RotateLeft();
 
     @ParameterizedTest
     @MethodSource("parametrized")
-    public void shouldReturnProperLocationAfterLeftRotation(Location currentLocation, Location expected) {
+    void shouldReturnProperLocationAfterLeftRotation(Location currentLocation, Location expected) {
         //when
         Location result = action.moveToNewLocation(currentLocation);
 

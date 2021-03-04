@@ -10,11 +10,11 @@ import static com.interview.domain.Command.*;
 import static com.interview.domain.Direction.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DirectionTest {
+class DirectionTest {
 
     @ParameterizedTest
     @MethodSource("parametrized")
-    public void shouldReturnProperDirectionAfterMove(Direction currentDirection, Command command, Direction expected) {
+    void shouldReturnProperDirectionAfterMove(Direction currentDirection, Command command, Direction expected) {
         //when
         Direction result = Direction.rotate(currentDirection, command);
 

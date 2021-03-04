@@ -33,7 +33,7 @@ public class CommandProcessor {
         return command.toUpperCase()
                 .chars()
                 .mapToObj(c -> (char) c)
-                .map(c -> Command.getBySymbol(c))
+                .map(Command::getBySymbol)
                 .collect(toUnmodifiableList());
     }
 }

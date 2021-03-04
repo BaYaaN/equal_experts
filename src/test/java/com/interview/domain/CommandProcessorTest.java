@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-public class CommandProcessorTest {
+class CommandProcessorTest {
 
     private final CommandProcessor commandProcessor = new CommandProcessor(new ActionFactory());
 
     @Test
-    public void shouldThrownNpeWhenLocationIsNull() {
+    void shouldThrownNpeWhenLocationIsNull() {
         //given
         Location startingPoint = null;
         String command = "FLFFFRFLB";
@@ -23,7 +23,7 @@ public class CommandProcessorTest {
     }
 
     @Test
-    public void shouldThrownNpeWhenCommandIsNull() {
+    void shouldThrownNpeWhenCommandIsNull() {
         //given
         Location startingPoint = new Location(4, 2, Direction.EAST);
         String command = null;
@@ -34,7 +34,7 @@ public class CommandProcessorTest {
     }
 
     @Test
-    public void shouldEnUpInStartingPositionWhenCommandIsEmpty() {
+    void shouldEnUpInStartingPositionWhenCommandIsEmpty() {
         //given
         Location startingPoint = new Location(4, 2, Direction.EAST);
         String command = "";
@@ -49,7 +49,7 @@ public class CommandProcessorTest {
     }
 
     @Test
-    public void shouldEnUpInGoodLocation() {
+    void shouldEnUpInGoodLocation() {
         //given
         Location startingPoint = new Location(4, 2, Direction.EAST);
         String command = "FLFFFRFLB";

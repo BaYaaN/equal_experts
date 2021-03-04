@@ -9,12 +9,12 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ActionFactoryTest {
+class ActionFactoryTest {
     private final ActionFactory actionFactory = new ActionFactory();
 
     @ParameterizedTest
     @MethodSource("parametrized")
-    public void test(Command command, Class clazz) {
+    void test(Command command, Class clazz) {
         Action actionByCommand = actionFactory.getActionByCommand(command);
 
         assertThat(actionByCommand).isInstanceOf(clazz);

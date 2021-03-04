@@ -11,13 +11,13 @@ import java.util.stream.Stream;
 import static com.interview.domain.Direction.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MoveBackwardTest {
+class MoveBackwardTest {
 
     private final Action action = new MoveBackward();
 
     @ParameterizedTest
     @MethodSource("parametrized")
-    public void shouldReturnProperLocationAfterMoveBackward(Location currentLocation, Location expected) {
+    void shouldReturnProperLocationAfterMoveBackward(Location currentLocation, Location expected) {
         //when
         Location result = action.moveToNewLocation(currentLocation);
 
