@@ -7,7 +7,7 @@ import static com.interview.domain.Command.ROTATE_LEFT;
 
 public class RotateLeft implements Action {
     @Override
-    public Location moveToNewLocation(Location currentLocation) {
+    public Location getNextLocation(Location currentLocation) {
         Direction directionAfterRotation = Direction.rotate(currentLocation.getDirection(), ROTATE_LEFT);
         return new Location(currentLocation.getX(), currentLocation.getY(), directionAfterRotation);
     }

@@ -29,7 +29,7 @@ public class CommandProcessor {
 
         for (Command command : mapCommandToList(commandAsString)) {
             Action action = actionFactory.getActionByCommand(command);
-            currentLocation = action.moveToNewLocation(currentLocation);
+            currentLocation = action.getNextLocation(currentLocation);
         }
 
         return currentLocation;

@@ -18,7 +18,7 @@ class MoveForwardTest {
     @MethodSource("parametrized")
     void shouldReturnProperLocationAfterMoveForward(Location currentLocation, Location expected) {
         //when
-        Location result = action.moveToNewLocation(currentLocation);
+        Location result = action.getNextLocation(currentLocation);
 
         //then
         assertThat(result).isEqualTo(expected);

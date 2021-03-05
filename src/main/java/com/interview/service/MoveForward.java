@@ -6,7 +6,7 @@ import com.interview.domain.Location;
 public class MoveForward implements Action {
 
     @Override
-    public Location moveToNewLocation(Location currentLocation) {
+    public Location getNextLocation(Location currentLocation) {
         int currentX = currentLocation.getX();
         int currentY = currentLocation.getY();
         Direction currentDirection = currentLocation.getDirection();
